@@ -2,7 +2,11 @@ server :
    port: 1234
    servlet:
       context-path: /micro-eureka-service-discovery
-      
+    
+spring:
+  application:
+    name: micro-eureka-service-discovery
+  
 eureka:
    client:
       registerWithEureka: false
@@ -10,4 +14,16 @@ eureka:
       server:
          waitTimeInMsWhenSyncEmpty: 0
          
+zuul:
+   prefix: /api
+   router:
+      micro-add-service:
+         #path: /micro-add-service/**
+         path: /micro-add-service-context/**
+         url: http://localhost:12345
+         
+      micro-calculator-service:
+         #path: /micro-calculator-service/**
+         path: /micro-calculator-service/**
+         url: http://localhost:12347
       
