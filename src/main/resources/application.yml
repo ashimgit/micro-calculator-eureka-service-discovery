@@ -1,0 +1,13 @@
+server :
+   port: 1234
+   servlet:
+      context-path: /micro-eureka-service-discovery
+      
+eureka:
+   client:
+      registerWithEureka: false
+      fetchRegistry: false
+      server:
+         waitTimeInMsWhenSyncEmpty: 0
+         
+      
