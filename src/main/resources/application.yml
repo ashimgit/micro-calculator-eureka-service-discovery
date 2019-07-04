@@ -11,19 +11,21 @@ eureka:
    client:
       registerWithEureka: false
       fetchRegistry: false
-      server:
+      server: 
          waitTimeInMsWhenSyncEmpty: 0
-         
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 zuul:
    prefix: /api
    router:
       micro-add-service:
          #path: /micro-add-service/**
          path: /micro-add-service-context/**
-         url: http://localhost:12345
+         #url: http://localhost:12345 #non docker
+         url: http://docker-add-service:12345
          
       micro-calculator-service:
          #path: /micro-calculator-service/**
          path: /micro-calculator-service/**
-         url: http://localhost:12347
+         #url: http://localhost:12347 #non-docker
+         url: http://docker-micro-calculator-service:12347 #for-docker
       
