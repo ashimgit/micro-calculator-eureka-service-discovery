@@ -9,3 +9,8 @@ URL:
 1. http://localhost:12347/micro-calculator-service/calculate/ADD/20/500
 2. http://localhost:12345/micro-add-service-context/add/do/20/50
 3. http://localhost:1234/micro-eureka-service-discovery/
+
+
+Docker :
+Run :
+==$docker run --network mynet --name docker-eureka-calculator-discovery -p 1234:1234 docker-eureka-calculator-discovery
